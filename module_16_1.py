@@ -15,6 +15,6 @@ async def admin():
 async def users_id(user_id: str):
   return (f"Вы вошли как пользоваетль №{user_id}")
 
-@app.get("/id")
+@app.get("/user")
 async def new_user(username: str, age: int):
   return (f"Информация о пользователе. Имя: {username}, Возраст: {age}")
