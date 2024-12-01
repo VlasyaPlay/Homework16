@@ -13,11 +13,6 @@ class User(BaseModel):
     age: int
 
 
-class ErrorDetail(BaseModel):
-    error: str
-    detail: Optional[str]
-
-
 @app.get('/users')
 def get_users():
     return users
