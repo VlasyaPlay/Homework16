@@ -27,7 +27,8 @@ def register_user(username: str = Path(min_length=5,
                                   le=120,
                                   description="Enter age",
                                   example="31")) -> User:
-    user_id = len(users) + 1
+    max_id = max((user.id for user in users), default=0)
+    user_id = max_id + 1
     new_user = User(id=user_id, username=username, age=age)
     users.append(new_user)
     return new_user
